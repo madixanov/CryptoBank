@@ -1,11 +1,11 @@
 import "./register.css";
-import RegisterHeader from "./UI/RegisterHeader";
+import LoginHeader from "../../components/form-components/LoginHeader";
 import RegisterMain from "./UI/RegisterMain";
 
 export default function RegisterPage() {
   return (
     <div className="login-page">
-      <RegisterHeader />
+      <LoginHeader />
       <RegisterMain />
     </div>
   )

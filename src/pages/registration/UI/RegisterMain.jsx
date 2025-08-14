@@ -1,6 +1,8 @@
 import hero from "../../../assets/photo/hero.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterMain() {
+  const navigate = useNavigate();
   return (
     <main className="login-main">
         <div className="login-container">
@@ -13,7 +15,7 @@ export default function RegisterMain() {
           </form>
           <button className="login-cont-button">ОТПРАВИТЬ</button>
           <div className="help-row">
-            <p className="forget-pass">Уже зарегистрированы?</p>
+            <p className="forget-pass" onClick={() => {navigate("/login")}}>Уже зарегистрированы?</p>
             <p className="register-b">Активация профиля</p>
           </div>
         </div>

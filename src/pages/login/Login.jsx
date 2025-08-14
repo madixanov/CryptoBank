@@ -1,5 +1,5 @@
 import "./login.css";
-import LoginHeader from "./UI/LoginHeader";
+import LoginHeader from "../../components/form-components/LoginHeader";
 import LoginMain from "./UI/LoginMain";
 
 export default function LoginPage() {
