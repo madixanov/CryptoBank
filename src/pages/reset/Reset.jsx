@@ -1,4 +1,4 @@
-import "./login.css";
+import "../login/login.css";
 import LoginHeader from "../../components/form-components/LoginHeader";
 import ResetMain from "./UI/ResetMain";
 
