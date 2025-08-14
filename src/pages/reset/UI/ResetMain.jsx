@@ -1,6 +1,6 @@
 import hero from "../../../assets/photo/hero.svg";
 
-export default function LoginMain() {
+export default function ResetMain() {
   return (
     <main className="login-main">
         <div className="login-container">
