@@ -4,14 +4,13 @@ export default function ResetMain() {
   return (
     <main className="login-main">
         <div className="login-container">
-          <p className="login-title">ВХОД</p>
+          <p className="login-title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</p>
           <form>
-            <input type="text" className="username-field" placeholder="Имя пользователя"/>
-            <input type="password" className="password-field" placeholder="Пароль"/>
+            <input type="email" className="email-field" placeholder="E-mail"/>
           </form>
-          <button className="login-cont-button">ВОЙТИ</button>
+          <button className="login-cont-button">ОТПРАВИТЬ</button>
           <div className="help-row">
-            <p className="forget-pass">Забыли пароль?</p>
+            <p className="forget-pass">Войти</p>
             <p className="register-b">Регистрация</p>
           </div>
         </div>
