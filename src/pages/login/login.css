@@ -221,7 +221,7 @@ header.scrolled {
   }
 
   .burger-menu.open {
-    transform: translateX(-150px);
+    transform: translate(-180px, -50px)
   }
 
   .burger-menu span {

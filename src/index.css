@@ -65,7 +65,7 @@ body.auth-page {
 
 @media (max-width: 600px) {
   .container {
-    width: 430px;
+    width: 400px;
   }
 }
 
