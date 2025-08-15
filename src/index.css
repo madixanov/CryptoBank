@@ -1,25 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Bebas Neue Cyrillic';
+  src: url('./assets/fonts/bebasneuecyrrilic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-color: black;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  max-width: 100vw;
+}
+
+button {
+  font-family: "Bebas Neue", 'Bebas Neue Cyrillic', sans-serif;
+  font-weight: 400;
+}
+
+body.auth-page {
+  overflow: hidden;
   background-color: white;
   background-image: url("/background-login.svg");
   height: 100vh;
-  font-family: "Bebas Neue", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  color: black;
+  font-family: "Bebas Neue", 'Bebas Neue Cyrillic', sans-serif;
 }
 
 .container {
   width: 1350px;
   padding: 0px 15px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1350px) {

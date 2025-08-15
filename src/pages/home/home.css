@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.home-main {
+  padding-top: 200px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  font-size: "Roboto Condensed", sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+.gradient1 {
+  position: absolute;
+  right: -30%;
+  bottom: -15%;
+}
+
+.gradient2 {
+  position: absolute;
+  top: -60%;
+}
+
+.gradient3 {
+  position: absolute;
+  top: 0%;
+  left: -35%;
+}
+
+.gradient4 {
+  position: absolute;
+  left: 32%;
+  top: 143%;
+}
+
+.gradient5 {
+  position: absolute;
+  opacity: 0.5;
+  top: 15%;
+  left: 50%;
+}
+
+.gradient6 {
+  position: absolute;
+  opacity: 0.5;
+  top: 8%;
+  left: 35%;
+}
+
+.main-container h1 {
+  width: 400px;
+  font-size: 70px;
+  font-weight: 500;
+  font-size: "Roboto Condensed", sans-serif;
+}
+
+.main-container h1 span {
+  color: #33E1F9;
+}
+
+.hero {
+  position: absolute;
+  width: 550px;
+  right: 0;
+}
+
+.exchange-main-container {
+  width: 655px;
+  height: 450px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50px;
+  display: flex;
+  padding: 48px 35px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 180px;
+}
+
+.exchange {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.exchange-main-container span {
+  font-size: 20px;
+  font-weight: 400;
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.first-input, .second-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first-input input {
+  border: none;
+  width: 380px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 22px;
+  font-weight: 700;
+  border: 2px solid #fff;
+  border-right: none;
+  background-color: #D9D9D9;
+  color: #26A9E0;
+}
+
+.first-input input::placeholder {
+  font-size: 22px;
+  font-weight: 700;
+  color: #26A9E0;
+}
+
+.first-input select {
+  border: none;
+  color: #26A9E0;
+  font-size: 20px;
+  font-weight: 700;
+  padding-right: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 2px solid #fff;
+  border-left: none;
+  background-color: #D9D9D9;
+}
+
+.second-input input {
+  border: none;
+  width: 380px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 22px;
+  font-weight: 700;
+  border: 2px solid #fff;
+  border-right: none;
+  background-color: #D9D9D9;
+  color: #26A9E0;
+}
+
+.second-input input::placeholder {
+  font-size: 22px;
+  font-weight: 700;
+  color: #26A9E0;
+}
+
+.second-input select {
+  border: none;
+  color: #26A9E0;
+  font-size: 20px;
+  font-weight: 700;
+  padding-right: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 2px solid #fff;
+  border-left: none;
+  background-color: #D9D9D9;
+}
+
+.second-input {
+  margin-bottom: 40px;
+}
+
+.continue-button {
+  background-color: transparent;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  border: 1px solid #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 69px;
+  padding: 14px 38px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.continue-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.advantages-container {
+  margin-bottom: 180px;
+  position: relative;
+}
+
+.advantages-container h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 60px;
+  letter-spacing: 3%;
+  margin: 0;
+  margin-bottom: 75px;
+}
+
+.a-container-grid {
+  display: flex;
+  gap: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.comfy {
+  width: 100%;
+  border: 3px solid #33E1F9;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  background-color: transparent;
+}
+
+.comfy p {
+  font-size: 30px;
+  font-weight: 500;
+  width: 250px;
+  text-align: center;
+}
+
+.safety {
+  width: 100%;
+  border: 3px solid #33E1F9;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  background-color: transparent;
+}
+
+.safety p {
+  font-size: 30px;
+  font-weight: 500;
+  width: 250px;
+  text-align: center;
+}
+
+.fast {
+  width: 100%;
+  border: 3px solid #33E1F9;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  background-color: transparent;
+}
+
+.fast p {
+  font-size: 30px;
+  font-weight: 500;
+  width: 250px;
+  text-align: center;
+}
+
+.a-hero {
+  position: absolute;
+  top: 430px;
+  left: -100px;
+}
+
+.r-container-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.ratings-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ratings-container h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 75px;
+}
+
+.feedback-container {
+  flex: 0 0 calc((100% - 60px) / 3); /* три карточки с учётом gap */
+  max-width: 420px;
+  border: 3px solid #33E1F9;
+  background-color: transparent;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+.comment {
+  font-size: 20px;
+  font-weight: 400;
+  width: 300px;
+}
+
+.partners-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.partners-container h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  height: 60px;
+}
+
+/* Влево */
+.marquee-left .marquee-track {
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Вправо */
+.marquee-right .marquee-track {
+  animation: scroll-right 25s linear infinite;
+}
+
+.marquee-right {
+  margin-bottom: 150px;
+}
+
+.marquee-track img {
+  transition: all 0.3s ease-in-out;
+}
+
+.marquee-track img:hover {
+  scale: 1.1;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+
