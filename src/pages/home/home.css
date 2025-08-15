@@ -152,6 +152,14 @@
   color: #26A9E0;
 }
 
+.first-input input:focus {
+  outline: none;
+}
+
+.second-input input:focus {
+  outline: none;
+}
+
 .second-input select {
   border: none;
   color: #26A9E0;
@@ -186,6 +194,11 @@
   background-color: white;
   color: black;
 }
+
+.hero, .gradient1, .gradient2, .gradient3, .gradient4, .gradient5, .gradient6 {
+  pointer-events: none; /* клики будут проходить сквозь */
+}
+
 
 .advantages-container {
   margin-bottom: 180px;
