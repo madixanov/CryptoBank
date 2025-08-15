@@ -550,6 +550,18 @@
     left: 10%;
     top: 50%;
   }
+
+  .marquee-track img {
+    width: 150px;
+  }
+
+  .marquee-right {
+    margin-bottom: 100px;
+  }
+
+  .partners-container h1 {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 600px) {
