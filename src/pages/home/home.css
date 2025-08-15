@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   font-size: "Roboto Condensed", sans-serif;
+  overflow-x: hidden;
 }
 
 .main-container {
@@ -100,6 +101,9 @@
 }
 
 .first-input input {
+  -webkit-appearance: none; /* Safari, iOS */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;    
   border: none;
   width: 380px;
   padding-left: 15px;
@@ -120,6 +124,9 @@
 }
 
 .first-input select {
+  -webkit-appearance: none; /* Safari, iOS */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;    
   border: none;
   color: #26A9E0;
   font-size: 20px;
@@ -133,6 +140,9 @@
 }
 
 .second-input input {
+  -webkit-appearance: none; /* Safari, iOS */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;    
   border: none;
   width: 380px;
   padding-left: 15px;
@@ -161,6 +171,9 @@
 }
 
 .second-input select {
+  -webkit-appearance: none; /* Safari, iOS */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;    
   border: none;
   color: #26A9E0;
   font-size: 20px;
@@ -397,4 +410,123 @@
   }
 }
 
+.hero-gray {
+  display: none;
+}
 
+@media (max-width: 1350px) {
+  .hero {
+    right: -10%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-main {
+    padding-top: 150px;
+  }
+
+  .main-container h1 {
+    font-size: 50px;
+    width: 350px;
+    margin-bottom: 100px;
+  }
+
+  .exchange-main-container {
+    width: 100%;
+    margin-bottom: 0 auto;
+  }
+
+  .first-input input, .second-input input {
+    width: 450px;
+    font-size: 16px;
+  }
+
+  .first-input select, .second-input select {
+    width: 250px;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    padding-left: 5px;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .hero-gray {
+    display: unset;
+    position: absolute;
+    width: 350px;
+    right: -5%;
+    top: -8%;
+    opacity: 0.2;
+  }
+
+  .gradient2 {
+    top: -25%;
+    left: -70%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .home-main {
+    padding-top: 100px;
+  }
+
+  .main-container h1 {
+    font-size: 40px;
+    font-weight: 500;
+    width: 300px;
+    margin-bottom: 100px;
+  }
+
+  .exchange-main-container {
+    width: 100%;
+    margin-bottom: 130px;
+  }
+
+  .first-input input, .second-input input {
+    width: 350px;
+    font-size: 14px;
+  } 
+
+  .first-input select, .second-input select {
+    width: 150px;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .first-input input, .second-input input {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .first-input select, .second-input select {
+    width: 120px;
+    font-size: 14px;;
+  }
+}
+
+@media (max-width: 400px) {
+  .exchange-main-container {
+    width: 350px;
+    padding-left: 20px;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .first-input input, .second-input input {
+    width: 140px;
+    font-size: 14px;
+  }
+
+  .first-input select, .second-input select {
+    width: 140px;
+    font-size: 14px;;
+  }
+}

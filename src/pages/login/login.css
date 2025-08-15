@@ -193,6 +193,11 @@ header.scrolled {
     font-size: 18px;
     padding: 10px 20px;
   }
+
+  header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -299,6 +304,11 @@ header.scrolled {
 
 @media (max-width: 600px) {
 
+  header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   .login-container {
     width: 400px;
     gap: 20px;
@@ -318,7 +328,8 @@ header.scrolled {
   }
 
   .login-cont-button {
-    font-size: 18px;
+    font-size: 14px;
+    scale: 0.9;
   }
 }
 

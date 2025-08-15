@@ -8,8 +8,8 @@ export default function HomeMain() {
     <main className="home-main">
       <div className="container">
         <Welcome />
-        <Advantages />
-        <Ratings />
+        {/* <Advantages />
+        <Ratings /> */}
       </div>
     </main>
   );

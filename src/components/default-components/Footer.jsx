@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-container">
           <div className="upper-container">
             <img src={logo} alt="logo" className="logo" />
-            <div className="schedule">
+            <div className="schedule-container">
               <div className="tg-cont">
                 <img src={tg} alt="Telegram" />
                 <span>Telegram</span>

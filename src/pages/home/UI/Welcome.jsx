@@ -1,5 +1,6 @@
 import { useState } from "react";
 import hero from "../../../assets/photo/hero_dark.svg";
+import hero_gray2 from "../../../assets/photo/hero_gray2.svg";
 import exchange from "../../../assets/icons/exchange.svg";
 import gradient from "../../../assets/photo/gradient.svg";
 
@@ -109,6 +110,7 @@ export default function Welcome() {
       </div>
 
       <img src={hero} alt="hero" className="hero" />
+      <img src={hero_gray2} alt="hero" className="hero-gray"/>
       <img src={gradient} alt="gradient" className="gradient1" />
       <img src={gradient} alt="gradient" className="gradient2" />
       <img src={gradient} alt="gradient" className="gradient3" />

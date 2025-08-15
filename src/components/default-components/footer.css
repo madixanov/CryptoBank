@@ -9,6 +9,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 200px;
 }
 
 .footer-container {
@@ -76,4 +77,50 @@ footer {
 .tg-cont img {
   width: 35px;
   height: 35px;
+}
+
+@media (max-width: 800px) {
+  .upper-container {
+    flex-direction: column-reverse;
+  }
+
+  .lower-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .tg-cont {
+    align-self: unset;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 18px;
+  }
+
+  .schedule p {
+    margin: 0;
+    
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .logo {
+    margin-top: 40px;
+    width: 320px;
+    margin-bottom: 37px;
+  }
+
+  .license-text {
+    font-size: 14px;
+    width: 170px;
+    text-align: center;
+    margin-top: 37px;
+  }
 }
