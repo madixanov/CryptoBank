@@ -286,6 +286,7 @@ header.scrolled {
 
   .login-container {
     width: 440px;
+    margin-top: 50px;
   }
 
   .login-container form input {
