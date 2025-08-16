@@ -11,7 +11,7 @@ export default function LoginMain() {
             <input type="text" className="username-field" placeholder="Имя пользователя"/>
             <input type="password" className="password-field" placeholder="Пароль"/>
           </form>
-          <button className="login-cont-button">ВОЙТИ</button>
+          <button className="login-cont-button login">ВОЙТИ</button>
           <div className="help-row">
             <p className="forget-pass" onClick={() => {navigate("/reset-password")}}>Забыли пароль?</p>
             <p className="register-b" onClick={() => {navigate("/signup")}}>Регистрация</p>

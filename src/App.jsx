@@ -4,6 +4,8 @@ import LoginPage from "./pages/login/Login";
 import ResetPage from "./pages/reset/Reset";
 import RegisterPage from "./pages/registration/Register";
 import HomePage from "./pages/home/Home";
+import AmlPage from "./pages/aml/Aml";
+import RulesPage from "./pages/rules/Rules";
 
 function AppContent() {
   const location = useLocation();
@@ -24,6 +26,8 @@ function AppContent() {
       <Route path="/signup" element={<RegisterPage />} />
       <Route path="/reset-password" element={<ResetPage />} />
       <Route path="/home" element={<HomePage />} />
+      <Route path="/aml" element={<AmlPage />} />
+      <Route path="/rules" element={<RulesPage />} />
     </Routes>
   );
 }

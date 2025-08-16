@@ -1,8 +1,11 @@
 import logo from '../../assets/photo/logo.svg';
 import tg from '../../assets/icons/tg.svg';
 import './footer.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer>
       <div className="container">
@@ -23,8 +26,8 @@ export default function Footer() {
           <div className="lower-container">
             <p className='license-text'>2023-2025 - сервис обмена электронных валют.<br /> Все права защищены.</p>
             <div className="links-container">
-              <p>FAQ</p>
-              <p>AML</p>
+              <p onClick={() => navigate("/rules")}>FAQ</p>
+              <p onClick={() => navigate("/aml")}>AML</p>
             </div>
           </div>
         </div>

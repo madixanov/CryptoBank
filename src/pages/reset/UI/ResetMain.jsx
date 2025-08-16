@@ -10,7 +10,7 @@ export default function ResetMain() {
           <form>
             <input type="email" className="email-field" placeholder="E-mail"/>
           </form>
-          <button className="login-cont-button">ОТПРАВИТЬ</button>
+          <button className="login-cont-button login">ОТПРАВИТЬ</button>
           <div className="help-row">
             <p className="forget-pass" onClick={() => {navigate("/login")}}>Войти</p>
             <p className="register-b" onClick={() => {navigate("/signup")}}>Регистрация</p>

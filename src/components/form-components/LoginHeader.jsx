@@ -10,7 +10,7 @@ export default function LoginHeader() {
     <header>
       <div className="container">
         <div className="header-cont">
-          <div className="logo">
+          <div className="logo" onClick={() => navigate("/home")}>
             <img src={logo} alt="logo" />
           </div>
           <div className="mobile-controls mobile-only">
@@ -21,8 +21,8 @@ export default function LoginHeader() {
             </div>
           </div>
           <div className="button-row">
-            <button className="login-button small" onClick={() => {navigate("/login")}}>ВХОД</button>
-            <button className="login-button" onClick={() => {navigate("/signup")}}>РЕГИСТРАЦИЯ</button>
+            <button className="login-button small login" onClick={() => {navigate("/login")}}>ВХОД</button>
+            <button className="login-button login" onClick={() => {navigate("/signup")}}>РЕГИСТРАЦИЯ</button>
           </div>
 
           {mobileMenuOpen && (

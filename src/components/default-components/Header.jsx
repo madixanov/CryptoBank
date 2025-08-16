@@ -24,7 +24,7 @@ export default function Header() {
     <header>
       <div className="container">
         <div className="header-cont">
-          <div className="logo">
+          <div className="logo" onClick={() => navigate("/home")}>
             <img src={logo} alt="logo"/>
           </div>
           <div className="mobile-controls mobile-only">
@@ -35,8 +35,8 @@ export default function Header() {
             </div>
           </div>
           <div className="button-row">
-            <button className="main-login-button small" onClick={() => {navigate("/login")}}>ВХОД</button>
-            <button className="main-login-button" onClick={() => {navigate("/signup")}}>РЕГИСТРАЦИЯ</button>
+            <button className="main-login-button small login" onClick={() => {navigate("/login")}}>ВХОД</button>
+            <button className="main-login-button login" onClick={() => {navigate("/signup")}}>РЕГИСТРАЦИЯ</button>
           </div>
 
           {mobileMenuOpen && (

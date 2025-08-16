@@ -13,7 +13,7 @@ export default function RegisterMain() {
             <input type="password" className="password-field" placeholder="Пароль"/>
             <input type="password" className="password-field" placeholder="Повторите пароль"/>
           </form>
-          <button className="login-cont-button">ОТПРАВИТЬ</button>
+          <button className="login-cont-button login">ОТПРАВИТЬ</button>
           <div className="help-row">
             <p className="forget-pass" onClick={() => {navigate("/login")}}>Уже зарегистрированы?</p>
             <p className="register-b">Активация профиля</p>
