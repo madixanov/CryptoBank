@@ -17,6 +17,7 @@ function AppContent() {
     } else {
       document.body.classList.remove("auth-page");
     }
+    window.scrollTo(0, 0)
   }, [location.pathname]);
 
   return (
