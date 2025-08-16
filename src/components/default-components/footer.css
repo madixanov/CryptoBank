@@ -79,6 +79,11 @@ footer {
 }
 
 @media (max-width: 800px) {
+  footer {
+    padding: 0;
+    padding: 50px;
+  }
+
   .upper-container {
     flex-direction: column-reverse;
   }

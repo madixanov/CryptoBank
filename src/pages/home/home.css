@@ -319,7 +319,7 @@
 
 .feedback-container {
   flex: 0 0 calc((100% - 60px) / 3); /* три карточки с учётом gap */
-  max-width: 420px;
+  width: 420px;
   border: 3px solid #33E1F9;
   background-color: transparent;
   border-radius: 30px;
@@ -327,6 +327,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 360px;
 }
 
 .name {
@@ -420,6 +421,15 @@
   .hero {
     right: -10%;
   }
+  .feedback-container {
+    flex: 0 0 48%; /* занимать всю ширину экрана */
+    width: 100%;
+    padding: 10px;
+  }
+
+  .feedback-container p {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -478,12 +488,29 @@
     width: 722px;
     gap: 45px;
   }
+
+  .r-container-grid {
+    flex-direction: row; /* оставляем горизонтально */
+    align-items: center;
+    gap: 30px;
+    max-height: unset;
+  }
+
+  .feedback-container {
+    flex: 0 0 50%; /* занимать всю ширину экрана */
+    width: 100%;
+  }
 }
 
 @media (max-width: 1000px) {
   .a-container-grid {
     flex-direction: column;
     align-items: center;
+  }
+
+  .feedback-container {
+    flex: 0 0 50%; /* занимать всю ширину экрана */
+    width: 100%;
   }
 }
 
@@ -502,6 +529,13 @@
   .exchange-main-container {
     width: 100%;
     margin-bottom: 130px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .exchange-main-container span {
+    padding-left: 21px;
   }
 
   .first-input input, .second-input input {
@@ -527,16 +561,13 @@
     padding: 10px;
   }
 
-  .r-container-grid {
-    flex-direction: column;
-    align-items: center;
-    max-height: 1000px;
-    margin-bottom: 30px;
+  .safety p, .comfy p, .fast p {
+    width: 100%;
   }
 
   .gradient4 {
     left: 5%;
-    top: 45%;
+    top: 30%;
     width: 500px;
   }
 
@@ -562,6 +593,11 @@
   .partners-container h1 {
     font-size: 40px;
   }
+
+  .feedback-container {
+    flex: 0 0 79%; /* занимать всю ширину экрана */
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -577,7 +613,6 @@
 
   .r-container-grid {
     width: 100%;
-    height: 1000px;
     margin-bottom: 30px;
   }
 
@@ -592,15 +627,19 @@
 
   .gradient4 {
     left: -10%;
-    top: 35%;
+    top: 15%;
     width: 500px;
+  }
+
+  .feedback-container {
+    flex: 0 0 100%; /* занимать всю ширину экрана */
+    width: 100%;
   }
 }
 
 @media (max-width: 550px) {
   .r-container-grid {
     width: 100%;
-    height: 1000px;
     margin-bottom: 30px;
     gap: 20px;
   }

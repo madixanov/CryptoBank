@@ -15,27 +15,45 @@ export default function Ratings() {
   const [items, setItems] = useState(feedbacks);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [itemsPerSlide, setItemsPerSlide] = useState(
+    window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3
+  );
 
+  // следим за ресайзом (адаптация)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerSlide(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerSlide(2);
+      } else {
+        setItemsPerSlide(3);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // автопрокрутка
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
         setItems((prev) => {
           const newArr = [...prev];
-          const first = newArr.shift();
-          newArr.push(first);
+          const moved = newArr.splice(0, itemsPerSlide);
+          newArr.push(...moved);
           return newArr;
         });
         setIsAnimating(false);
+
+        // индекс двигаем по каждому отзыву
         setActiveIndex((prev) => (prev + 1) % feedbacks.length);
       }, 500);
-    }, 5000); // ⏳ увеличили до 5 секунд
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  // Количество "страниц" = общее кол-во элементов - 2 (так как показываем по 3)
-  const totalDots = feedbacks.length;
+  }, [itemsPerSlide, feedbacks.length]);
 
   return (
     <div className="ratings-container" style={{ overflow: "hidden", textAlign: "center" }}>
@@ -45,7 +63,7 @@ export default function Ratings() {
         style={{
           display: "flex",
           transition: isAnimating ? "transform 0.5s ease" : "none",
-          transform: isAnimating ? "translateX(-33.3333%)" : "translateX(0)",
+          transform: isAnimating ? `translateX(-${100 / itemsPerSlide}%)` : "translateX(0)",
         }}
       >
         {items.map((item, idx) => (
@@ -53,7 +71,6 @@ export default function Ratings() {
             key={idx}
             className="feedback-container"
             style={{
-              flex: "0 0 33.3333%",
               padding: "20px",
               boxSizing: "border-box",
             }}
@@ -68,7 +85,7 @@ export default function Ratings() {
 
       {/* Навигация-точки */}
       <div style={{ marginTop: "15px", display: "flex", justifyContent: "center", gap: "8px" }}>
-        {Array.from({ length: totalDots }).map((_, i) => (
+        {Array.from({ length: feedbacks.length }).map((_, i) => (
           <div
             key={i}
             style={{
