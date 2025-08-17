@@ -1,53 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import gradient from "../../../assets/photo/gradient.svg";
-import { useState } from "react";
-import usdt from "../../../assets/icons/usdt.svg";
-import abrub from "../../../assets/icons/abrub.svg";
+import PersonalData from "./PersonalData";
+import SendContainer from "./SendContainer";
+import useExchangeStore from "../../../store/exchange-store";
+import GetContainer from "./GetContainer";
+import AgreementContainer from "./AgreementContainer";
 
 export default function ExchangeMain() {
   const navigate = useNavigate();
-
-  const [giveCurrency, setGiveCurrency] = useState("USDT"); // отдаём
-  const [getCurrency, setGetCurrency] = useState("RUB");    // получаем
-  const [amount, setAmount] = useState(1);
-
-  const currencyIcons = {
-    USDT: usdt,
-    RUB: abrub,
-  };
-
-  // курсы: 1 USDT = 81 RUB и обратно
-  const exchangeRates = {
-    USDT: { RUB: 81 },
-    RUB: { USDT: 0.0123 },
-  };
-
-  // вычисляем курс динамически
-  const rate = exchangeRates[giveCurrency]?.[getCurrency] || 1;
-
-  const handleGiveChange = (e) => {
-    const selected = e.target.value;
-    setGiveCurrency(selected);
-
-    // если выбрали ту же валюту, что и "получаете", меняем getCurrency
-    if (selected === getCurrency) {
-      setGetCurrency(giveCurrency);
-    }
-  };
-
-  const handleGetChange = (e) => {
-    const selected = e.target.value;
-    setGetCurrency(selected);
-
-    // если выбрали ту же валюту, что и "отдаёте", меняем giveCurrency
-    if (selected === giveCurrency) {
-      setGiveCurrency(getCurrency);
-    }
-  };
+  const { giveCurrency } = useExchangeStore();
 
   return (
-    <div className="container">
-      <main className="aml-main">
+    <main className="aml-main">
+      <div className="container">
         <div className="aml-container-grid">
           <div className="exchange-form-grid">
             {/* Блок с правилами */}
@@ -67,77 +32,40 @@ export default function ExchangeMain() {
             {/* Форма обмена */}
             <div className="exchange-rules">
               <div className="exchange-text">
-                <h1 className="exchange-form-title">Отдаёте</h1>
-                <div className="give-container">
-                  <span className="currency">
-                    Курс 1 {giveCurrency} = {rate} {getCurrency}
-                  </span>
-                  <div className="currency-selector-container">
-                    <img
-                      src={currencyIcons[giveCurrency]}
-                      alt={giveCurrency}
-                      style={{ marginRight: "10px", width: "50px" }}
-                    />
-                    <select
-                      onChange={handleGiveChange}
-                      className="currency-selector"
-                      value={giveCurrency}
-                    >
-                      <option value="USDT">Tether TRC20 USDT</option>
-                      <option value="RUB">Альфа Банк RUB</option>
-                    </select>
-                  </div>
-                  <span className="limits">
-                    min.: {giveCurrency === "USDT" ? "493.82716049 USDT" : "81 RUB"} <br />
-                    max.: {giveCurrency === "USDT" ? "2 222.822222222 USDT" : "180 048.5999982 RUB"}
-                  </span>
-                  <span>Сумма *:</span>
-                  <input
-                    type="number"
-                    className="number-to-exchange"
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                  />
-                </div>
+                
+                <SendContainer />
 
                 <div className="breaking-line"></div>
 
-                <h1>Получаете</h1>
-                <div className="get-container">
-                  <div className="currency-selector-container">
-                    <img
-                      src={currencyIcons[getCurrency]}
-                      alt={getCurrency}
-                      style={{ marginRight: "10px", width: "50px" }}
-                    />
-                    <select
-                      onChange={handleGetChange}
-                      className="currency-selector"
-                      value={getCurrency}
-                    >
-                      <option value="USDT">Tether TRC20 USDT</option>
-                      <option value="RUB">Альфа Банк RUB</option>
-                    </select>
-                  </div>
-                  <span className="result">
-                    Вы получите: {(amount * rate).toFixed(2)} {getCurrency}
-                  </span>
-                </div>
+                <GetContainer />
+
+                <div className="breaking-line"></div>
+
+                <PersonalData />
+
+                <div className="breaking-line"></div>
+
+                <AgreementContainer />
+              
               </div>
             </div>
 
             {/* Шаги по обмену */}
             <div className="exchange-rules" style={{ whiteSpace: "pre-line" }}>
               <div className="exchange-text">
-                <h1>Обмен {giveCurrency} на {getCurrency}</h1>
+                <h1>{giveCurrency === "USDT" ? "Обмен Tether TRC20 USDT на Альфа-Банк RUB" : "Обмен Tether Альфа-Банк RUB на TRC20 USDT"}</h1>
                 Для обмена выполните несколько шагов:
+                <br />
                 <ol>
                   <li>Заполните все поля формы.</li>
+                  <br />
                   <li>
                     Ознакомьтесь с условиями обмена в <span className="span-links">FAQ</span> и{" "}
                     <span className="span-links">AML</span>, затем нажмите «Обменять».
                   </li>
+                  <br />
                   <li>Оплатите заявку по инструкциям на сайте.</li>
+                  <br />
                   <li>После оплаты система перенаправит вас на страницу статуса заявки.</li>
                 </ol>
               </div>
@@ -179,7 +107,7 @@ export default function ExchangeMain() {
         {[...Array(9)].map((_, i) => (
           <img key={i} src={gradient} alt="gradient" className={`gradient gradient-a${i+1}`} />
         ))}
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

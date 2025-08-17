@@ -5,8 +5,8 @@ export default function AmlMain() {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
-      <main className="aml-main">
+    <main className="aml-main">
+      <div className="container">
         <h1>AML правила</h1>
         <div className="aml-container-grid">
           <div className="aml-rules">
@@ -190,7 +190,7 @@ export default function AmlMain() {
         <img src={gradient} alt="gradient" className="gradient gradient-a7"/>
         <img src={gradient} alt="gradient" className="gradient gradient-a8"/>
         <img src={gradient} alt="gradient" className="gradient gradient-a9"/>
-      </main>
-    </div>
+      </div>
+    </main>
   )
 }

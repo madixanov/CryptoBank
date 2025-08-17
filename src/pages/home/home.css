@@ -73,7 +73,7 @@
 
 .exchange-main-container {
   width: 655px;
-  height: 450px;
+  height: 100%;
   border: 2px solid #FFFFFF;
   border-radius: 50px;
   display: flex;
@@ -106,7 +106,7 @@
   -moz-appearance: none;    /* Firefox */
   appearance: none;    
   border: none;
-  width: 380px;
+  width: 350px;
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -138,6 +138,10 @@
   border: 2px solid #fff;
   border-left: none;
   background-color: #D9D9D9;
+  background-image: url("/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position:  right;
+  width: 230px;
 }
 
 .second-input input {
@@ -145,7 +149,7 @@
   -moz-appearance: none;    /* Firefox */
   appearance: none;    
   border: none;
-  width: 380px;
+  width: 350px;
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -177,7 +181,7 @@
   appearance: none;    
   border: none;
   color: #26A9E0;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   padding-right: 15px;
   padding-top: 7px;
@@ -185,6 +189,10 @@
   border: 2px solid #fff;
   border-left: none;
   background-color: #D9D9D9;
+  background-image: url("/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position:  right;
+  width: 230px;
 }
 
 .second-input {
@@ -446,6 +454,7 @@
   .exchange-main-container {
     width: 100%;
     margin-bottom: 0 auto;
+    height: 100%;
   }
 
   .first-input input, .second-input input {
@@ -517,6 +526,7 @@
 @media (max-width: 800px) {
   .home-main {
     padding-top: 100px;
+    padding-bottom: 30px;
   }
 
   .main-container h1 {
@@ -529,7 +539,9 @@
   .exchange-main-container {
     width: 100%;
     margin-bottom: 130px;
-    padding: 10px;
+    padding: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     justify-content: center;
     align-items: center;
   }
@@ -559,6 +571,7 @@
 
   .safety, .comfy, .fast {
     padding: 10px;
+    height: 100%;
   }
 
   .safety p, .comfy p, .fast p {
@@ -597,6 +610,10 @@
   .feedback-container {
     flex: 0 0 79%; /* занимать всю ширину экрана */
     width: 100%;
+  }
+
+  .advantages-container {
+    margin-bottom: 70px;
   }
 }
 

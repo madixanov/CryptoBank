@@ -15,11 +15,19 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 880px;
+    width: 100%;
+}
+
+.exchange-rules {
+    width: 100%;
+    max-width: 880px;
 }
 
 .exchange-text {
     font-size: 18px;
     font-weight: 400;
+    max-width: 880px;
 }
 
 .exchange-text h1 {
@@ -95,6 +103,7 @@
     color: white;
     -moz-appearance: textfield; /* Firefox */
     appearance: textfield;
+    margin-bottom: 25px;
 }
 
 .number-to-exchange:focus {
@@ -105,6 +114,190 @@
     width: 100%;
     height: 1px;
     background-color: rgba(255,255,255,0.2  );
-    margin-top: 70px;
+    margin-top: 65px;
     margin-bottom: 70px;
+}
+
+.exchange-button {
+    width: 415px;
+    height: 70px;
+    border-radius: 100px;
+    background-color: #33E1F9;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.exchange-button:hover {
+    background-color: white;
+    color: #26A9E0;
+}
+
+.agreement-chackbox {
+    border: 1px solid #33E1F9;
+    background-color: transparent;
+    appearance: none; /* убираем стандартный стиль */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0;
+    margin-right: 12px;
+}
+
+.agreement-chackbox:checked {
+    background-color: #33E1F9;
+    accent-color: white;
+}
+
+.agreement-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 23px;
+}
+
+.agreement-container label {
+    width: 300px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+    .exchange-form-grid {
+        width: 420px;
+    }
+
+    .number-to-exchange {
+        width: 100%;
+    }
+
+    .exchange-button {
+        width: 100%;
+    }
+
+    .currency-selector-container {
+        width: 100%;
+    }
+
+    .limits {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .breaking-line {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .number-to-exchange {
+        width: 100%;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .currency-selector-container {
+        width: 100%;
+        height: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .currency-selector-container select {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .currency-selector-container img {
+        scale: 0.5;
+    }
+
+    .limits {
+        width: 100%;
+    }
+
+    .exchange-text {
+        width: 100%;
+    }
+
+    .exchange-button {
+        width: 100%;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .exchange-text h1 {
+        font-size: 24px;
+    }
+
+    .exchange-text span {
+        font-size: 16px;
+    }
+
+    .agreement-container label {
+    font-size: 16px;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .exchange-rules {
+        width: 100%;
+    }
+
+    .number-to-exchange {
+        width: 100%;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .currency-selector-container {
+        width: 100%;
+        height: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .currency-selector-container select {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .currency-selector-container img {
+        scale: 0.5;
+    }
+
+    .limits {
+        width: 260px;
+    }
+
+    .exchange-text {
+        width: 260px;
+    }
+
+    .exchange-button {
+        width: 100%;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .exchange-text h1 {
+        font-size: 24px;
+    }
+
+    .exchange-text span {
+        font-size: 16px;
+    }
+
+    .agreement-container label {
+    font-size: 16px;
+    }
 }
