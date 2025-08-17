@@ -15,6 +15,10 @@
   margin-bottom: 30px;
 }
 
+.aml-container-grid {
+  display: flex;
+}
+
 .aml-rules {
   display: flex;
   flex-direction: column;
@@ -165,6 +169,7 @@
 
 .gradient {
   position: absolute;
+  pointer-events: none;
 }
 
 .gradient-a1 {

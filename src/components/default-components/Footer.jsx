@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lower-container">
             <p className='license-text'>2023-2025 - сервис обмена электронных валют.<br /> Все права защищены.</p>
             <div className="links-container">
-              <p onClick={() => navigate("/rules")}>FAQ</p>
+              <p onClick={() => navigate("/faq")}>FAQ</p>
               <p onClick={() => navigate("/aml")}>AML</p>
             </div>
           </div>

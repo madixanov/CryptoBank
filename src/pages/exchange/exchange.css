@@ -1,0 +1,110 @@
+.exchange-rules {
+  display: flex;
+  flex-direction: column;   
+  border: 1px solid #fff; /* полупрозрачная рамка */
+  border-radius: 30px;
+  max-width: 880px;
+  padding: 30px;
+  min-width: 315px;
+  background: rgba(255, 255, 255, 0.2); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.exchange-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.exchange-text {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.exchange-text h1 {
+    text-align: unset;
+}
+
+.currency-selector-container {
+    display: flex;
+    border: 1px solid #33E1F9;
+    width: 415px;
+    border-radius: 100px;
+    padding: 10px 30px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.currency-selector-container select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 25px;
+    font-weight: 400;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("/dropdown.svg");
+    background-repeat: no-repeat;
+    background-position:  right;
+    background-size: 16px;
+    width: 100%;
+}
+
+.currency-selector-container select:focus {
+    outline: none;
+}
+
+.currency-selector-container select option {
+    color: black;
+}
+
+.currency {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.limits {
+    font-size: 16px;
+    font-weight: 400;
+    color: #33E1F9;
+    width: 415px;
+    text-align: end;
+    display: block;
+}
+
+.number-to-exchange input[type=number]::-webkit-inner-spin-button,
+.number-to-exchange input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-to-exchange {
+    display: flex;
+    border: 1px solid #33E1F9;
+    width: 415px;
+    border-radius: 100px;
+    padding: 10px 30px;
+    align-items: center;
+    margin-top: 10px;
+    background-color: transparent;
+    font-size: 25px;
+    height: 72px;
+    color: white;
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield;
+}
+
+.number-to-exchange:focus {
+    outline: none;
+}
+
+.breaking-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,0.2  );
+    margin-top: 70px;
+    margin-bottom: 70px;
+}

@@ -6,6 +6,7 @@ import RegisterPage from "./pages/registration/Register";
 import HomePage from "./pages/home/Home";
 import AmlPage from "./pages/aml/Aml";
 import RulesPage from "./pages/rules/Rules";
+import ExchangePage from "./pages/exchange/Exchange";
 
 function AppContent() {
   const location = useLocation();
@@ -28,7 +29,8 @@ function AppContent() {
       <Route path="/reset-password" element={<ResetPage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/aml" element={<AmlPage />} />
-      <Route path="/rules" element={<RulesPage />} />
+      <Route path="/faq" element={<RulesPage />} />
+      <Route path="/exchange" element={<ExchangePage />} />
     </Routes>
   );
 }
