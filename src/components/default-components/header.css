@@ -26,3 +26,12 @@
 .logo {
   cursor: pointer;
 }
+
+.logged-in-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+}

@@ -1,0 +1,309 @@
+.profile-main {
+  padding-top: 160px;
+  padding-bottom: 150px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  border: 1px solid #FFFFFF;
+  background: rgba(255, 255, 255, 0.2); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 30px;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 55px;
+}
+
+.referal-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 80px;
+  padding: 20px 30px;
+  border: 1px solid #33E1F9;
+  border-radius: 100px;
+  font-size: 22px;
+}
+
+.referal-container img {
+  cursor: pointer;
+}
+
+.referal-input {
+  width: 100%;
+  padding: 20px 30px;
+  border: 1px solid #33E1F9;
+  border-radius: 100px;
+  font-size: 22px;
+  background-color: transparent;
+  color: white;
+}
+
+.profile-button {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  background-color: #33E1F9;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-button:hover {
+  color: #26A9E0;
+  background-color: white;
+}
+
+.profile-exchange {
+  display: flex;
+  margin-bottom: 55px;
+  gap: 30px;
+}
+
+.profile-exchange-container {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.profile-data-container {
+  width: 620px;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.profile-data-container input {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.profile-exchange-container input {
+  width: 100%;
+}
+
+.dropdown-selected {
+  width: 100%;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 100px;
+  font-size: 22px;
+  color: white;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.dropdown-list li {
+  list-style: none;
+}
+
+.dropdown-item {
+  padding: 12px 20px;
+  font-size: 22px;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #33E1F9;
+  color: black;
+}
+
+.referal-container input {
+  background-color: transparent;
+  color: white;
+  font-size: 22px;
+  border: none;
+  
+}
+.referal-container input:focus {
+  outline: none;
+  -webkit-appearance: none; /* Safari, iOS */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;  
+}
+
+.exchange-table {
+  border-radius: 30px;
+  padding: 30px;
+  color: white;
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.2); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.exchange-table p {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.exchange-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 22px;
+}
+
+.exchange-table tr {
+  gap: 25px;
+}
+
+.exchange-table th,
+.exchange-table td {
+  padding: 12px 16px;
+}
+
+.exchange-table thead th {
+  color: #00bcd4; /* голубой как в примере */
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.exchange-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.mobile-cards {
+  display: none;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.card p span {
+  font-size: 14px;
+  color: #33E1F9;
+}
+
+@media (max-width: 1200px) {
+  .dropdown-selected {
+    font-size: 16px;
+    gap: 5px;
+    padding: 10px 0px;
+  }
+
+  .referal-container {
+    height: 96px;
+  }
+
+  .referal-input {
+    height: 96px;
+  }
+
+  .profile-data-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 800px) {
+  .profile-exchange {
+    flex-wrap: wrap;
+    gap: 55px;
+  }
+
+  .referal-container {
+    padding: 10px 30px;
+    height: 72px;
+    margin-bottom: 30px;
+    
+  }
+
+  .referal-container span {
+    white-space: nowrap;       /* Запрещаем перенос строк */
+    overflow: hidden;          /* Скрываем лишнее */
+    text-overflow: ellipsis;
+    font-size: 18px;
+  }
+
+  .dropdown-selected {
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .referal-input {
+    padding: 10px 30px;
+    font-size: 18px;
+    height: 72px;
+  }
+
+  .exchange-table table {
+    font-size: 18px;
+  }
+
+  .profile-data-container input {
+    height: 72px;
+    font-size: 18px;
+  }
+
+  .desktop-table {
+    display: none;
+  }
+  .mobile-cards {
+    display: block;
+  }
+}

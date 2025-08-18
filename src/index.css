@@ -39,6 +39,20 @@ body.auth-page {
   font-family: "Bebas Neue", 'Bebas Neue Cyrillic', sans-serif;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input {
+  font-size: 16px !important;
+}
+
 .container {
   width: 1350px;
   padding: 0px 15px;

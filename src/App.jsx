@@ -7,6 +7,7 @@ import HomePage from "./pages/home/Home";
 import AmlPage from "./pages/aml/Aml";
 import RulesPage from "./pages/rules/Rules";
 import ExchangePage from "./pages/exchange/Exchange";
+import ProfilePage from "./pages/profile/Profile";
 
 function AppContent() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function AppContent() {
       <Route path="/aml" element={<AmlPage />} />
       <Route path="/faq" element={<RulesPage />} />
       <Route path="/exchange" element={<ExchangePage />} />
+      <Route path="/my-profile" element={<ProfilePage />}/>
     </Routes>
   );
 }
