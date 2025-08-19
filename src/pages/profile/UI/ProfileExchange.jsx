@@ -1,51 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import useExchangeStore from "../../../store/exchange-store";
-import { ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
-function CustomDropdown({ options, value, onChange }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef(null);
-
-  // Закрывать при клике вне
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  return (
-    <div className="dropdown" ref={ref}>
-      <div className="dropdown-selected" onClick={() => setOpen(!open)}>
-        {value}
-        <ChevronDown
-          size={20}
-          className={`chevron ${open ? "rotate" : ""}`}
-        />
-      </div>
-      {open && (
-        <ul className="dropdown-list">
-          {options.map((opt) => (
-            <li
-              key={opt}
-              className="dropdown-item"
-              onClick={() => {
-                onChange(opt);
-                setOpen(false);
-              }}
-            >
-              {opt}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
+import CustomDropdown from "../../../components/default-components/CustomDropdown";
 
 export default function ProfileExchange() {
   const navigate = useNavigate();
@@ -80,6 +36,11 @@ export default function ProfileExchange() {
           setPhone("+" + value);
         };
 
+  const options = [
+    { label: "USDT", value: "USDT" },
+    { label: "Альфа Банк RUB", value: "RUB" },
+  ];
+
   return (
     <div className="profile-exchange">
       <div className="profile-exchange-container">
@@ -87,7 +48,7 @@ export default function ProfileExchange() {
         <div className="referal-container">
           <input type="number" value={giveAmount} min="0" onChange={(e) => setGiveAmount(Number(e.target.value))}/>
           <CustomDropdown
-            options={["USDT", "Альфа Банк RUB"]}
+            options={options}
             value={giveCurrency}
             onChange={(val) => setGiveCurrency(val)}
           />
@@ -96,7 +57,7 @@ export default function ProfileExchange() {
         <div className="referal-container">
           <input type="number" value={getAmount} min="0" onChange={(e) => setGetAmount(Number(e.target.value))} />
           <CustomDropdown
-            options={["USDT", "Альфа Банк RUB"]}
+            options={options}
             value={getCurrency}
             onChange={(val) => setGetCurrency(val)}
           />

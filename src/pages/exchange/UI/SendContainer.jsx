@@ -1,6 +1,7 @@
 import usdt from "../../../assets/icons/usdt.svg";
 import abrub from "../../../assets/icons/abrub.svg";
 import useExchangeStore from "../../../store/exchange-store";
+import CustomDropdown from "../../../components/default-components/CustomDropdown";
 
 export default function SendContainer() {
     const {
@@ -17,6 +18,11 @@ export default function SendContainer() {
     RUB: abrub,
   };
 
+  const options = [
+    { label: "Tether TRC20 USDT", value: "USDT" },
+    { label: "Альфа Банк RUB", value: "RUB" },
+  ];
+
   const rate = rates[giveCurrency]?.[getCurrency] || 1;
 
     return (
@@ -32,14 +38,12 @@ export default function SendContainer() {
                       alt={giveCurrency}
                       style={{ marginRight: "10px", width: "50px" }}
                     />
-                    <select
-                      onChange={(e) => setGiveCurrency(e.target.value)}
-                      className="currency-selector"
+                    <CustomDropdown
+                      options={options}
                       value={giveCurrency}
-                    >
-                      <option value="USDT">Tether TRC20 USDT</option>
-                      <option value="RUB">Альфа Банк RUB</option>
-                    </select>
+                      onChange={(val) => setGiveCurrency(val)}
+                      classSelected={"exchange-selected"}
+                    />
                   </div>
                   <span className="limits">
                     min.: {giveCurrency === "USDT" ? "493.82 USDT" : "40000.00 RUB"} <br />

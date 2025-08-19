@@ -6,7 +6,9 @@ export default function Partners() {
 
   return (
     <div className="partners-container">
-      <h1>ПАРТНЕРЫ</h1>
+      <div className="container">
+        <h1>ПАРТНЕРЫ</h1>
+      </div>
 
       {/* Первый ряд — влево */}
       <div className="marquee marquee-left">

@@ -27,8 +27,8 @@ export default function LoginHeader() {
 
           {mobileMenuOpen && (
             <div className="button-column">
-              <button onClick={() => {navigate("/login")}}>ВХОД</button>
-              <button onClick={() => {navigate("/signup")}}>РЕГИСТРАЦИЯ</button>
+              <button className="button-column-button" onClick={() => {navigate("/login")}}>ВХОД</button>
+              <button className="button-column-button" onClick={() => {navigate("/signup")}}>РЕГИСТРАЦИЯ</button>
             </div>
           )}
         </div>

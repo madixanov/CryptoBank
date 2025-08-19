@@ -2,6 +2,7 @@ import usdt from "../../../assets/icons/usdt.svg";
 import abrub from "../../../assets/icons/abrub.svg";
 import useExchangeStore from "../../../store/exchange-store";
 import { useState } from "react";
+import CustomDropdown from "../../../components/default-components/CustomDropdown";
 
 export default function GetContainer() {
     const {
@@ -55,6 +56,11 @@ export default function GetContainer() {
           setCardNumber(value);
         };
 
+    const options = [
+      { label: "Tether TRC20 USDT", value: "USDT" },
+      { label: "Альфа Банк RUB", value: "RUB" },
+    ];
+
     return (
         <div className="get-main-container">
             <h1>Получаете</h1>
@@ -65,14 +71,12 @@ export default function GetContainer() {
                         alt={getCurrency}
                         style={{ marginRight: "10px", width: "50px" }}
                     />
-                    <select
-                        onChange={(e) => setGetCurrency(e.target.value)}
-                        className="currency-selector"
-                        value={getCurrency}
-                    >
-                        <option value="USDT">Tether TRC20 USDT</option>
-                        <option value="RUB">Альфа Банк RUB</option>
-                    </select>
+                    <CustomDropdown
+                      options={options}
+                      value={getCurrency}
+                      onChange={(val) => setGetCurrency(val)}
+                      classSelected={"exchange-selected"}
+                    />
                     </div>
                     <span className="limits">
                     min.: {giveCurrency === "USDT" ? "40000.00 RUB" : "493.82 USDT"} <br />

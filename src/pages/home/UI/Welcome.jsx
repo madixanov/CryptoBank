@@ -4,6 +4,7 @@ import exchange from "../../../assets/icons/exchange.svg";
 import gradient from "../../../assets/photo/gradient.svg";
 import useExchangeStore from "../../../store/exchange-store";
 import { useNavigate } from "react-router-dom";
+import CustomDropdown from "../../../components/default-components/CustomDropdown";
 
 export default function Welcome() {
   const {
@@ -23,6 +24,11 @@ export default function Welcome() {
     navigate("/exchange"); // тут данные уже в zustand
   };
 
+  const options = [
+  { label: "USDT (TRC20)", value: "USDT" },
+  { label: "Альфа банк RUB", value: "RUB" },
+];
+
   return (
     <div className="main-container">
       <h1>
@@ -37,13 +43,16 @@ export default function Welcome() {
             value={giveAmount}
             onChange={(e) => {
 
-              setGiveAmount(e.target.value);
+              setGiveAmount(Number(e.target.value));
             }}
             />
-          <select value={giveCurrency} onChange={(e) => setGiveCurrency(e.target.value)}>
-            <option value="USDT">USDT(trc20)</option>
-            <option value="RUB">Альфа Банк РУБ</option>
-          </select>
+          <CustomDropdown
+            options={options}
+            value={giveCurrency}            // "USDT" или "RUB"
+            onChange={(val) => setGiveCurrency(val)}
+            classDrop={"home"}
+            classSelected={"home-selected"}
+          />
         </div>
 
         <img src={exchange} alt="exchange" className="exchange" />
@@ -54,12 +63,15 @@ export default function Welcome() {
             type="text"
             placeholder="81.0"
             value={getAmount}
-            onChange={(e) => setGetAmount(e.target.value)}
+            onChange={(e) => setGetAmount(Number(e.target.value))}
           />
-          <select value={getCurrency} onChange={(e) => setGetCurrency(e.target.value)}>
-            <option value="RUB">Альфа Банк РУБ</option>
-            <option value="USDT">USDT(trc20)</option>
-          </select>
+          <CustomDropdown
+            options={options}
+            value={getCurrency}
+            onChange={(val) => setGetCurrency(val)}
+            classDrop={"home"}
+            classSelected={"home-selected"}
+          />
         </div>
 
         <button className="continue-button" onClick={handleClick}>
