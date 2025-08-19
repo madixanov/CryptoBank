@@ -9,7 +9,7 @@ export default function ReferalContainer() {
         <img src={copy} alt="Copy Icon" />
       </div>
       <p style={{marginTop: "0px"}}>Ваш реферальный баланс</p>
-      <input type="text" style={{marginBottom: "50px"}} className="referal-input" value="350  RUB" />
+      <input type="text" style={{marginBottom: "50px"}} className="referal-input" value="350  RUB" readOnly/>
       <button className="profile-button">Вывести</button>
     </div>
   )

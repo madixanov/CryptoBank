@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ExchangeTable() {
   const data = [
     { id: 1505, direction: "Альфа-банк RUB-USDT TRC20", amount: "1 TRC20" },
@@ -21,9 +23,21 @@ export default function ExchangeTable() {
           <tbody>
             {data.map((row) => (
               <tr key={row.id}>
-                <td style={{borderRight: "1px solid rgba(255,255,255, 0.2)", width: "25%", textAlign: "center"}}>{row.id}</td>
-                <td style={{borderRight: "1px solid rgba(255,255,255, 0.2)", width: "50%", textAlign: "center"}}>{row.direction}</td>
-                <td style={{width: "25%", textAlign: "center"}}>{row.amount}</td>
+                <td style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255, 0.2)" }}>
+                  <Link to={`/status/${row.id}`} style={{ color: "white", textDecoration: "none" }}>
+                    {row.id}
+                  </Link>
+                </td>
+                <td style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255, 0.2" }}>
+                  <Link to={`/status/${row.id}`} style={{ color: "white", textDecoration: "none" }}>
+                    {row.direction}
+                  </Link>
+                </td>
+                <td style={{ textAlign: "center" }}>
+                  <Link to={`/status/${row.id}`} style={{ color: "white", textDecoration: "none" }}>
+                    {row.amount}
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -31,11 +45,13 @@ export default function ExchangeTable() {
 
         <div className="mobile-cards">
           {data.map((row) => (
-            <div className="card" key={row.id}>
-              <p><span>Номер заявки</span> {row.id}</p>
-              <p><span>Направление обмена</span><br />{row.direction}</p>
-              <p><span>Сумма</span> {row.amount}</p>
-            </div>
+            <Link to={`/status/${row.id}`} style={{color: "white", textDecoration: "none"}} key={row.id}>
+              <div className="card">
+                <p><span>Номер заявки</span> {row.id}</p>
+                <p><span>Направление обмена</span><br />{row.direction}</p>
+                <p><span>Сумма</span> {row.amount}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -8,6 +8,7 @@ import AmlPage from "./pages/aml/Aml";
 import RulesPage from "./pages/rules/Rules";
 import ExchangePage from "./pages/exchange/Exchange";
 import ProfilePage from "./pages/profile/Profile";
+import StatusPage from "./pages/status/Status";
 
 function AppContent() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function AppContent() {
       <Route path="/faq" element={<RulesPage />} />
       <Route path="/exchange" element={<ExchangePage />} />
       <Route path="/my-profile" element={<ProfilePage />}/>
+      <Route path="/status/:id" element={<StatusPage />}/>
     </Routes>
   );
 }
