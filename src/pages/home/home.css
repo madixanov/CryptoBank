@@ -533,6 +533,10 @@
     flex: 0 0 50%; /* занимать всю ширину экрана */
     width: 100%;
   }
+
+  .first-input input, .second-input input {
+    height: 35px;
+  }
 }
 
 @media (max-width: 800px) {

@@ -310,13 +310,18 @@
   }
 
   .home-selected {
-    padding: 4px 0;
-    padding-bottom: 5px;
+    padding: 0;
     font-size: 18px;
+    display: flex;
+    
   }
 
   .home {
     width: 235px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 }
 
@@ -368,8 +373,6 @@
   }
 
   .home-selected {
-    padding: 4px 0;
-    padding-top: 5px;
     font-size: 18px;
   }
 
