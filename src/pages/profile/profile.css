@@ -394,3 +394,11 @@
     width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+  .home-selected {
+    padding: 6px 0;
+    padding-top: 6px;
+    font-size: 17px;
+  }
+}

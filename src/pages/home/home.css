@@ -639,12 +639,12 @@
   .first-input input, .second-input input {
     width: 100%;
     font-size: 18px;
-    padding: 5px 15px;
+    padding: 6px 15px;
   }
 
   .first-input select, .second-input select {
     width: 100%;
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .r-container-grid {
