@@ -1,4 +1,4 @@
-export default function AgreementContainer() {
+export default function AgreementContainer({ click }) {
     return (
         <div className="agreement-main-container">
             <div className="agreement-container">
@@ -19,7 +19,7 @@ export default function AgreementContainer() {
                     Не запоминать введенные данные
                 </label>
             </div>
-            <button className="exchange-button">Продолжить</button>
+            <button className="exchange-button" onClick={click}>Продолжить</button>
         </div>
     )
 }

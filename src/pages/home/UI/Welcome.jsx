@@ -51,12 +51,17 @@ export default function Welcome() {
         <div className="first-input">
           <input
             type="number"
-            value={giveAmount}
+            value={giveAmount || 1}  // если 0, показываем 1
             onChange={(e) => {
+              const value = Number(e.target.value);
 
-              setGiveAmount(Number(e.target.value));
+              if (value <= 0 || isNaN(value)) {
+                setGiveAmount(1); // если 0, отрицательное или пустое → ставим 1
+              } else {
+                setGiveAmount(value);
+              }
             }}
-            />
+          />
           <CustomDropdown
             options={options}
             value={giveCurrency}            // "USDT" или "RUB"
@@ -73,8 +78,11 @@ export default function Welcome() {
           <input
             type="text"
             placeholder="81.0"
-            value={getAmount}
-            onChange={(e) => setGetAmount(Number(e.target.value))}
+            value={getAmount || 1}
+            onChange={(e) => {
+              const value = Number(e.target.value);
+              setGetAmount(value > 0 ? value : 1);
+            }}
           />
           <CustomDropdown
             options={options}

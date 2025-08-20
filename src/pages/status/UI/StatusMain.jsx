@@ -1,19 +1,14 @@
-import { useNavigate, useParams} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import useLoginStore from "../../../store/login-store"
+import useBidStore from "../../../store/bid-store"
 import gradient from "../../../assets/photo/gradient.svg"
 
 export default function StatusMain() {
-  const { id } = useParams(); 
-
-  const data = [
-    { id: 1505, direction: "Альфа-банк RUB-USDT TRC20", amount: "1 TRC20", status: "Отправка средств пользователю" },
-    { id: 1740, direction: "Альфа-банк RUB-USDT TRC20", amount: "5 TRC20", status: "Успешно выполнено" },
-    { id: 2019, direction: "Альфа-банк RUB-USDT TRC20", amount: "10 TRC20", status: "Отказано в отправке" },
-  ];
+  
+  const { giveBidCurrency, getBidAmount, bidStatus, bidId } = useBidStore();
+  
 
   const { loggedIn } = useLoginStore();
-
-  const payment = data.find((item) => item.id.toString() === id);
 
   const navigate = useNavigate();
   return (
@@ -21,15 +16,14 @@ export default function StatusMain() {
       <div className="container">
         <div className="status-sub-container">
           <div className="status-container">
-            {payment ? (<div>
+            <div>
               <p className="status-title">Статус заявки</p>
-              <p className="status-text"><span>Номер заявки: </span>{payment.id}</p>
-              <p className="status-text"><span>Направление обмена: </span> {payment.direction}</p>
-              <p className="status-text"><span>Сумма: </span>{payment.amount}</p>
-              <p className="status-text last"><span>Статус заявки: </span>{payment.status}</p>
+              <p className="status-text"><span>Номер заявки: </span>{bidId}</p>
+              <p className="status-text"><span>Направление обмена: </span> {giveBidCurrency === "USDT" ? "USDT TRC20" : "Альфа-Банк RUB"}-{giveBidCurrency === "USDT" ? "Альфа-Банк RUB" : "USDT TRC20"}</p>
+              <p className="status-text"><span>Сумма: </span>{giveBidCurrency === "RUB" ?  <span>{getBidAmount / 81} TRC20</span>: <span>{getBidAmount * 81} RUB</span>}</p>
+              <p className="status-text last"><span>Статус заявки: </span>{bidStatus}</p>
               <p className="hint">Узнать дополнительную информацию по заявке вы можете у оператора, обратившись в чат.</p>
-            </div>) : 
-            (<p>Заявка не найдена</p>)}
+            </div>
           </div>
           {loggedIn ? <div></div> : <div className="aml-login-container status-login-container">
             <p>Авторизация</p>

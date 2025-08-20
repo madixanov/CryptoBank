@@ -3,6 +3,7 @@ import gradient from "../../../assets/photo/gradient.svg";
 import PersonalData from "./PersonalData";
 import SendContainer from "./SendContainer";
 import useExchangeStore from "../../../store/exchange-store";
+import useBidStore from "../../../store/bid-store";
 import GetContainer from "./GetContainer";
 import AgreementContainer from "./AgreementContainer";
 import CardData from "./CardData";
@@ -10,6 +11,27 @@ import CardData from "./CardData";
 export default function ExchangeMain() {
   const navigate = useNavigate();
   const { giveCurrency, getCurrency } = useExchangeStore();
+  const {
+    giveBidCurrency,
+    getBidCurrency,
+    getBidAmount,
+    setBidId,
+    bidId,
+  } = useBidStore();
+
+  const handleContinue = () => {
+    // Проверяем, что всё заполнено
+    if (!giveBidCurrency || !giveBidCurrency ) {
+      console.log(giveBidCurrency, getBidCurrency, getBidAmount)
+      alert("Заполните все поля!");
+      return;
+    }
+
+    setBidId(Date.now())
+
+    // Переходим на страницу статуса заявки
+    navigate(`/status/${bidId}`);
+  };
 
   return (
     <main className="aml-main">
@@ -59,7 +81,7 @@ export default function ExchangeMain() {
 
                 <div className="breaking-line"></div>
 
-                <AgreementContainer />
+                <AgreementContainer click={handleContinue}/>
               
               </div>
             </div>

@@ -24,19 +24,14 @@ export default function ExchangeTable() {
             {data.map((row) => (
               <tr key={row.id}>
                 <td style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255, 0.2)" }}>
-                  <Link to={`/status/${row.id}`} style={{ color: "white", textDecoration: "none" }}>
                     {row.id}
-                  </Link>
                 </td>
                 <td style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255, 0.2" }}>
-                  <Link to={`/status/${row.id}`} style={{ color: "white", textDecoration: "none" }}>
                     {row.direction}
-                  </Link>
                 </td>
                 <td style={{ textAlign: "center" }}>
-                  <Link to={`/status/${row.id}`} style={{ color: "white", textDecoration: "none" }}>
                     {row.amount}
-                  </Link>
+
                 </td>
               </tr>
             ))}
@@ -45,13 +40,11 @@ export default function ExchangeTable() {
 
         <div className="mobile-cards">
           {data.map((row) => (
-            <Link to={`/status/${row.id}`} style={{color: "white", textDecoration: "none"}} key={row.id}>
               <div className="card">
                 <p><span>Номер заявки</span> {row.id}</p>
                 <p><span>Направление обмена</span><br />{row.direction}</p>
                 <p><span>Сумма</span> {row.amount}</p>
               </div>
-            </Link>
           ))}
         </div>
       </div>
