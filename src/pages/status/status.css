@@ -77,6 +77,10 @@
     height: 100%;
   }
 
+  .status-main {
+    margin-top: 100px;
+  }
+
   .status-sub-container {
     flex-wrap: wrap;
   }
