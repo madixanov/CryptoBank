@@ -16,7 +16,7 @@ export default function LoginMain() {
     if (login.length >= 5 && password.length >= 8) {
       setLoggedIn(true);
       setLoginName(login);
-      navigate("/home");
+      navigate("/");
     } else if (login.length < 5) {
       setIncorrectLogin(true);
     } else if (password.length < 8) {

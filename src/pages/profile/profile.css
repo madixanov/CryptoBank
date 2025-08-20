@@ -261,7 +261,6 @@
 
 @media (max-width: 1200px) {
   .dropdown-selected {
-    font-size: 16px;
     gap: 5px;
     padding: 10px 0px;
   }
@@ -278,6 +277,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .home-selected {
+    padding: 4px 0;
+    font-size: 18px;
+  }
+
+  .home {
+    width: 235px;
   }
 }
 
@@ -302,7 +310,7 @@
   }
 
   .dropdown-selected {
-    font-size: 14px;
+    font-size: 18px;
     gap: 5px;
   }
 
@@ -326,5 +334,24 @@
   }
   .mobile-cards {
     display: block;
+  }
+
+  .home-selected {
+    padding: 4px 0;
+    font-size: 18px;
+  }
+
+  .home {
+    width: 175px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-selected {
+    padding: 4px 0;
+  }
+
+  .home {
+    width: 121px;
   }
 }

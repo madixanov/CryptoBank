@@ -47,7 +47,7 @@ header.scrolled {
 .button-row {
   display: flex;
   justify-content: center;
-  align-self: flex-end;
+  align-self: center;
   gap: 30px;
 }
 

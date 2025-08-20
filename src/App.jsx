@@ -25,11 +25,10 @@ function AppContent() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" replace />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<RegisterPage />} />
       <Route path="/reset-password" element={<ResetPage />} />
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/aml" element={<AmlPage />} />
       <Route path="/faq" element={<RulesPage />} />
       <Route path="/exchange" element={<ExchangePage />} />

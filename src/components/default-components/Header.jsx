@@ -33,7 +33,7 @@ export default function Header() {
     <header>
       <div className="container">
         <div className="header-cont">
-          <div className="logo" onClick={() => navigate("/home")}>
+          <div className="logo-h" onClick={() => navigate("/")}>
             <img src={logo} alt="logo"/>
           </div>
           <div className="mobile-controls mobile-only">

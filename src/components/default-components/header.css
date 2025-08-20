@@ -21,10 +21,13 @@
 
 .button-row {
   gap: 15px;
+  display: flex;
+  align-items: center;
 }
 
-.logo {
+.logo-h {
   cursor: pointer;
+  margin: 0;
 }
 
 .logged-in-button {
