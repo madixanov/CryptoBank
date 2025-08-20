@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import gradient from "../../../assets/photo/gradient.svg";
 import PersonalData from "./PersonalData";
@@ -13,24 +14,59 @@ export default function ExchangeMain() {
   const { giveCurrency, getCurrency } = useExchangeStore();
   const {
     giveBidCurrency,
-    getBidCurrency,
     getBidAmount,
+    fullName,
+    email,
+    phoneNumber,
+    cardPhone,
+    card,
+    cardFullName,
+    telegram,
+    isAgree1,
+    isAgree2,
+    isAgree3,
     setBidId,
-    bidId,
+    resetBidStore,
   } = useBidStore();
 
   const handleContinue = () => {
-    // Проверяем, что всё заполнено
-    if (!giveBidCurrency || !giveBidCurrency ) {
-      console.log(giveBidCurrency, getBidCurrency, getBidAmount)
-      alert("Заполните все поля!");
+    // Проверяем заполненность всех обязательных полей
+    if (
+      !giveBidCurrency ||
+      !getBidAmount ||
+      !fullName ||
+      !email ||
+      !phoneNumber ||
+      !cardPhone ||
+      !cardFullName ||
+      !card ||
+      !telegram ||
+      !isAgree1 ||
+      !isAgree2 ||
+      !isAgree3
+    ) {
+      console.log(giveBidCurrency)
+      console.log(getBidAmount)
+      console.log(fullName)
+      console.log(email)
+      console.log(phoneNumber)
+      console.log(cardPhone)
+      console.log(cardFullName)
+      console.log(card)
+      console.log(telegram)
+      console.log(telegram)
+      console.log(isAgree1)
+      console.log(isAgree2)
+      console.log(isAgree3)
+      alert("⚠️ Пожалуйста, заполните все обязательные поля!");
       return;
     }
 
-    setBidId(Date.now())
-
-    // Переходим на страницу статуса заявки
-    navigate(`/status/${bidId}`);
+    // Генерируем новый ID заявки
+    const newBidId = Date.now();
+    setBidId(newBidId);
+    // Переход на страницу статуса заявки
+    navigate(`/status/${newBidId}`);
   };
 
   return (
@@ -55,41 +91,34 @@ export default function ExchangeMain() {
             {/* Форма обмена */}
             <div className="exchange-rules">
               <div className="exchange-text">
-                
                 <SendContainer />
 
-                {giveCurrency === "RUB" && (
-                  <>
-                    <CardData />
-                  </>
-                )}
+                {giveCurrency === "RUB" && <CardData />}
 
                 <div className="breaking-line"></div>
 
                 <GetContainer />
 
-                {getCurrency === "RUB" && (
-                  <>
-                    <CardData />
-                  </>
-                )}
+                {getCurrency === "RUB" && <CardData />}
 
                 <div className="breaking-line"></div>
 
                 <PersonalData />
 
-
                 <div className="breaking-line"></div>
 
-                <AgreementContainer click={handleContinue}/>
-              
+                <AgreementContainer click={handleContinue} />
               </div>
             </div>
 
             {/* Шаги по обмену */}
             <div className="exchange-rules" style={{ whiteSpace: "pre-line" }}>
               <div className="exchange-text">
-                <h1>{giveCurrency === "USDT" ? "Обмен Tether TRC20 USDT на Альфа-Банк RUB" : "Обмен Tether Альфа-Банк RUB на TRC20 USDT"}</h1>
+                <h1>
+                  {giveCurrency === "USDT"
+                    ? "Обмен Tether TRC20 USDT на Альфа-Банк RUB"
+                    : "Обмен Tether Альфа-Банк RUB на TRC20 USDT"}
+                </h1>
                 Для обмена выполните несколько шагов:
                 <br />
                 <ol>
@@ -141,7 +170,7 @@ export default function ExchangeMain() {
 
         {/* Фоновые градиенты */}
         {[...Array(9)].map((_, i) => (
-          <img key={i} src={gradient} alt="gradient" className={`gradient gradient-a${i+1}`} />
+          <img key={i} src={gradient} alt="gradient" className={`gradient gradient-a${i + 1}`} />
         ))}
       </div>
     </main>

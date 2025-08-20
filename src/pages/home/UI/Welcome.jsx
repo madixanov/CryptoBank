@@ -5,6 +5,7 @@ import gradient from "../../../assets/photo/gradient.svg";
 import useExchangeStore from "../../../store/exchange-store";
 import { useNavigate } from "react-router-dom";
 import CustomDropdown from "../../../components/default-components/CustomDropdown";
+import useBidStore from "../../../store/bid-store";
 
 export default function Welcome() {
   const {
@@ -18,9 +19,12 @@ export default function Welcome() {
     setGetAmount,
   } = useExchangeStore();
 
+  const { resetBidStore } = useBidStore();
+
   const navigate = useNavigate();
 
   const handleClick = () => {
+    resetBidStore();
     navigate("/exchange"); // тут данные уже в zustand
   };
 

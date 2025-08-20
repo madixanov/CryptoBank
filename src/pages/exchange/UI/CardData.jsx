@@ -1,53 +1,86 @@
 import { useState } from "react";
+import useBidStore from "../../../store/bid-store";
 
 export default function CardData() {
+  const { setField } = useBidStore();
+
   const [phone, setPhone] = useState("+7");
+  const [cardNumber, setCardNumber] = useState("");
+
+  // Обработка телефона
   const handlePhoneChange = (e) => {
     let value = e.target.value;
 
-    // убираем всё кроме цифр
+    // Убираем всё, кроме цифр
     value = value.replace(/\D/g, "");
 
-    // гарантируем что всегда начинается с "7"
+    // Гарантируем, что начинается с "7"
     if (!value.startsWith("7")) {
       value = "7" + value;
     }
 
-    // ограничиваем до 11 цифр (+7 и ещё 10 цифр)
+    // Ограничиваем 11 цифрами
     value = value.slice(0, 11);
 
-    // собираем обратно с плюсом
-    setPhone("+" + value);
+    // Форматируем для отображения
+    const formattedPhone = "+" + value;
+    setPhone(formattedPhone);
+
+    // Сохраняем уже нормализованное значение в Zustand
+    setField("cardPhone", formattedPhone);
   };
 
-  
-
-  const [cardNumber, setCardNumber] = useState("");
-
+  // Обработка номера карты
   const handleCardChange = (e) => {
     let value = e.target.value;
 
-    // убираем всё кроме цифр
+    // Убираем всё, кроме цифр
     value = value.replace(/\D/g, "");
 
-    // ограничиваем 16 цифрами
+    // Ограничиваем 16 цифрами
     value = value.slice(0, 16);
 
-    // вставляем пробелы каждые 4 цифры
-    value = value.replace(/(.{4})/g, "$1 ").trim();
+    // Вставляем пробелы каждые 4 цифры
+    const formattedCard = value.replace(/(.{4})/g, "$1 ").trim();
+    setCardNumber(formattedCard);
 
-    setCardNumber(value);
+    // В Zustand сохраняем "чистый" номер карты
+    setField("card", value);
   };
 
+  // Обработка имени владельца карты
+  const handleCardFullNameChange = (e) => {
+    setField("cardFullName", e.target.value);
+  };
 
   return (
     <>
       <span>На карту*:</span>
-      <input type="text" className="number-to-exchange" placeholder="1234 5678 9012 3456" maxLength={19} value={cardNumber} onChange={handleCardChange}  />
+      <input
+        type="text"
+        className="number-to-exchange"
+        placeholder="1234 5678 9012 3456"
+        maxLength={19}
+        value={cardNumber}
+        onChange={handleCardChange}
+      />
+
       <span>Номер телефона, привязанный к банку (СБП)*:</span>
-      <input type="tel" className="number-to-exchange" value={phone} placeholder="+7" onChange={handlePhoneChange}/>
+      <input
+        type="tel"
+        className="number-to-exchange"
+        value={phone}
+        placeholder="+7"
+        onChange={handlePhoneChange}
+      />
+
       <span>Имя получателя — как на карте *:</span>
-      <input type="text" placeholder="Иван И." className="number-to-exchange" />
+      <input
+        type="text"
+        placeholder="Иван И."
+        className="number-to-exchange"
+        onChange={handleCardFullNameChange}
+      />
     </>
-  )
+  );
 }

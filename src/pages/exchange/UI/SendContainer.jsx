@@ -15,7 +15,7 @@ export default function SendContainer() {
     setGiveAmount,
   } = useExchangeStore();
 
-  const { setGiveBidCurrency, setGetBidAmount } = useBidStore();
+  const { setField, giveBidCurrency, getBidAmount } = useBidStore();
 
   const currencyIcons = {
     USDT: usdt,
@@ -27,25 +27,22 @@ export default function SendContainer() {
     { label: "Альфа Банк RUB", value: "RUB" },
   ];
 
-  // курс валют
   const rate = rates[giveCurrency]?.[getCurrency] || 1;
 
-  // Сразу выставляем значение 1 при первой загрузке
+  // ✅ Всегда синхронизируем bid-store с exchange-store
   useEffect(() => {
-    if (!giveAmount || giveAmount <= 0) {
-      setGiveAmount(1);
-      setGetBidAmount(1);
-    }
-  }, [giveAmount, setGiveAmount, setGetBidAmount]);
+    setField("giveBidCurrency", giveCurrency);
+    setField("getBidAmount", giveAmount);
+  }, [giveCurrency, giveAmount]); // <- следим за изменениями
 
-  // Сохраняем валюту в bid-store
+  // ✅ Отдельный эффект для дебага
   useEffect(() => {
-    setGiveBidCurrency(giveCurrency);
-  }, [giveCurrency, setGiveBidCurrency]);
+    console.log("📌 giveBidCurrency:", giveBidCurrency);
+    console.log("📌 getBidAmount:", getBidAmount);
+  }, [giveBidCurrency, getBidAmount]);
 
   const handleCurrencyChange = (val) => {
     setGiveCurrency(val);
-    setGiveBidCurrency(val);
   };
 
   const handleAmountChange = (e) => {
@@ -53,7 +50,6 @@ export default function SendContainer() {
     const finalValue = value <= 0 || isNaN(value) ? 1 : value;
 
     setGiveAmount(finalValue);
-    setGetBidAmount(finalValue);
   };
 
   return (

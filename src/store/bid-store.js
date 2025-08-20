@@ -1,18 +1,49 @@
-// src/store/bid-store.js
 import { create } from "zustand";
 
 const useBidStore = create((set) => ({
-  // Временные значения
   giveBidCurrency: "",
-  getBidCurrency: "",
   getBidAmount: 0,
+  fullName: "",
+  email: "",
+  phoneNumber: "",
+  cardPhone: "",
+  card: "",
+  cardFullName: "",
+  telegram: "",
+  discount: "",
+  isAgree1: false,
+  isAgree2: false,
+  isAgree3: false,
+  bidId: "",
   bidStatus: "Отправка средств пользователю",
 
-  // Методы изменения временных значений
-  setGiveBidCurrency: (value) => set({ giveBidCurrency: value }),
-  setGetBidCurrency: (value) => set({ getBidCurrency: value }),
-  setGetBidAmount: (value) => set({ getBidAmount: value }),
-  setBidId: (value) => set({bidId: value})
+  // ✅ Универсальный метод для обновления полей
+  setField: (field, value) =>
+    set(() => {
+      console.log(`✅ [Zustand] ${field} →`, value);
+      return { [field]: value };
+    }),
+
+  setBidId: (id) => set(() => ({ bidId: id })),
+
+  // 🔹 Сброс всех данных
+  resetBidStore: () =>
+    set({
+      giveBidCurrency: "",
+      getBidAmount: 0,
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      cardPhone: "",
+      card: "",
+      cardFullName: "",
+      telegram: "",
+      discount: "",
+      isAgree1: false,
+      isAgree2: false,
+      isAgree3: false,
+      bidId: "",
+    }),
 }));
 
 export default useBidStore;
