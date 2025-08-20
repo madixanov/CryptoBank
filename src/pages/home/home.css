@@ -427,6 +427,11 @@
   display: none;
 }
 
+.exchange {
+  width: 25px;
+  cursor: pointer;
+}
+
 @media (max-width: 1350px) {
   .hero {
     right: -10%;

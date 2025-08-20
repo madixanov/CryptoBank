@@ -164,7 +164,7 @@
 }
 
 .agreement-container label {
-    width: 300px;
+    width: 450px;
     font-size: 18px;
     font-weight: 400;
 }
@@ -194,6 +194,10 @@
 @media (max-width: 800px) {
 
     .exchange-form-grid {
+        width: 100%;
+    }
+
+    .exchange-text {
         width: 100%;
     }
 
@@ -288,9 +292,9 @@
         width: 260px;
     }
 
-    .exchange-text {
+    /* .exchange-text {
         width: 260px;
-    }
+    } */
 
     .exchange-button {
         width: 100%;

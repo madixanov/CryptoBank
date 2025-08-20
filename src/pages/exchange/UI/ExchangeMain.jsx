@@ -5,10 +5,11 @@ import SendContainer from "./SendContainer";
 import useExchangeStore from "../../../store/exchange-store";
 import GetContainer from "./GetContainer";
 import AgreementContainer from "./AgreementContainer";
+import CardData from "./CardData";
 
 export default function ExchangeMain() {
   const navigate = useNavigate();
-  const { giveCurrency } = useExchangeStore();
+  const { giveCurrency, getCurrency } = useExchangeStore();
 
   return (
     <main className="aml-main">
@@ -35,13 +36,26 @@ export default function ExchangeMain() {
                 
                 <SendContainer />
 
+                {giveCurrency === "RUB" && (
+                  <>
+                    <CardData />
+                  </>
+                )}
+
                 <div className="breaking-line"></div>
 
                 <GetContainer />
 
+                {getCurrency === "RUB" && (
+                  <>
+                    <CardData />
+                  </>
+                )}
+
                 <div className="breaking-line"></div>
 
                 <PersonalData />
+
 
                 <div className="breaking-line"></div>
 

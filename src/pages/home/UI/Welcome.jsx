@@ -29,6 +29,17 @@ export default function Welcome() {
   { label: "Альфа банк RUB", value: "RUB" },
 ];
 
+  const handleSwap = () => {
+    const prevGiveCurrency = giveCurrency;
+    const prevGiveAmount = giveAmount;
+
+    setGiveCurrency(getCurrency);
+    setGetCurrency(prevGiveCurrency);
+
+    setGiveAmount(getAmount);
+    setGetAmount(prevGiveAmount);
+  };
+
   return (
     <div className="main-container">
       <h1>
@@ -55,7 +66,7 @@ export default function Welcome() {
           />
         </div>
 
-        <img src={exchange} alt="exchange" className="exchange" />
+        <img src={exchange} alt="exchange" className="exchange" onClick={handleSwap}/>
 
         <span>Получаете</span>
         <div className="second-input">
