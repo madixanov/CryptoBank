@@ -116,6 +116,8 @@
   border-right: none;
   background-color: #D9D9D9;
   color: #26A9E0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 
 .first-input input::placeholder {
@@ -159,6 +161,8 @@
   border-right: none;
   background-color: #D9D9D9;
   color: #26A9E0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 
 .second-input input::placeholder {
@@ -356,7 +360,7 @@
 }
 
 .partners-container {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 40px;
   width: 100%;
@@ -467,7 +471,7 @@
 
   .first-input input, .second-input input {
     width: 450px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .first-input select, .second-input select {
@@ -560,7 +564,7 @@
 
   .first-input input, .second-input input {
     width: 350px;
-    font-size: 16px;
+    font-size: 18px;
   } 
 
   .first-input select, .second-input select {
@@ -612,6 +616,7 @@
   }
 
   .ratings-container h1 {
+    width: 100%;
     text-align: center;
   }
 
@@ -633,7 +638,8 @@
 @media (max-width: 600px) {
   .first-input input, .second-input input {
     width: 100%;
-    font-size: 17px;
+    font-size: 18px;
+    padding: 5px 15px;
   }
 
   .first-input select, .second-input select {
@@ -672,6 +678,12 @@
     width: 100%;
     margin-bottom: 30px;
     gap: 20px;
+  }
+
+  .first-input input, .second-input input {
+    width: 100%;
+    padding: 6px 15px;
+    font-size: 18px;
   }
 }
 

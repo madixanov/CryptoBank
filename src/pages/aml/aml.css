@@ -247,6 +247,10 @@
 }
 
 @media (max-width: 800px) {
+  .aml-main {
+    padding-top: 100px;
+  }
+  
   .aml-container-grid {
     flex-wrap: wrap;
     width: 100%;

@@ -5,7 +5,6 @@ import RegisterMain from "./UI/RegisterMain";
 export default function RegisterPage() {
   return (
     <div className="login-page">
-      <LoginHeader />
       <RegisterMain />
     </div>
   )
