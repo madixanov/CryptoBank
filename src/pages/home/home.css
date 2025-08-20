@@ -425,6 +425,7 @@
 
 .hero-gray {
   display: none;
+  pointer-events: none;
 }
 
 .exchange {
