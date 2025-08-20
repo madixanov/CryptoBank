@@ -1,5 +1,6 @@
 import { useNavigate, useParams} from "react-router-dom";
 import useLoginStore from "../../../store/login-store"
+import gradient from "../../../assets/photo/gradient.svg"
 
 export default function StatusMain() {
   const { id } = useParams(); 
@@ -47,6 +48,9 @@ export default function StatusMain() {
           </div>}
         </div>
       </div>
+      <img src={gradient} alt="gradient" className="profile-gradient pg1" />
+      <img src={gradient} alt="gradient" className="profile-gradient pg2" />
+      <img src={gradient} alt="gradient" className="profile-gradient pg3" />
     </main>
   )
 }

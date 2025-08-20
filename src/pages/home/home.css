@@ -626,13 +626,13 @@
 
 @media (max-width: 600px) {
   .first-input input, .second-input input {
-    width: 200px;
-    font-size: 14px;
+    width: 100%;
+    font-size: 17px;
   }
 
   .first-input select, .second-input select {
-    width: 120px;
-    font-size: 14px;;
+    width: 100%;
+    font-size: 17px;
   }
 
   .r-container-grid {
@@ -678,12 +678,11 @@
   }
 
   .first-input input, .second-input input {
-    width: 140px;
-    font-size: 14px;
+    width: 100%;
+    font-size: 17px;
   }
 
   .first-input select, .second-input select {
-    width: 140px;
-    font-size: 14px;;
+    font-size: 17px;
   }
 }

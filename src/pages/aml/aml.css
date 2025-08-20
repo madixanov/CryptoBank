@@ -249,6 +249,7 @@
 @media (max-width: 800px) {
   .aml-container-grid {
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .aml-login-container {

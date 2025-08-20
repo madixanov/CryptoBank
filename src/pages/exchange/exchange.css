@@ -192,6 +192,15 @@
 }
 
 @media (max-width: 800px) {
+
+    .exchange-form-grid {
+        width: 100%;
+    }
+
+    .exchange-rules {
+        width: 100%;
+    }
+
     .breaking-line {
         margin-top: 30px;
         margin-bottom: 30px;
